@@ -18,7 +18,7 @@ export default function Page() {
     try {
       let imageUrl = ''
 
-      // 🔹 Upload gambar
+      //Upload gambar
       if (image) {
         const fileName = `${Date.now()}-${image.name}`
 
@@ -40,7 +40,7 @@ export default function Page() {
         imageUrl = data.publicUrl
       }
 
-      // 🔹 Insert DB
+      //Insert database
       const { error } = await supabase
         .from('reports')
         .insert([
@@ -94,7 +94,6 @@ export default function Page() {
             required
           />
 
-          {/* ✅ Upload gambar (highlight versi simpel) */}
           <div className="border-2 border-dashed border-blue-300 p-4 rounded-lg text-center hover:bg-blue-50 transition">
             
             <input
